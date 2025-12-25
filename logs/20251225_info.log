@@ -1,0 +1,661 @@
+[CASE]13:59:39:265-caseLog.py:71 >> Method Name:testCase01_updateNoteContent, Class Name:CreateNoteContentHandle
+[CASE]13:59:39:369-caseLog.py:72 >> Test Description:请求上传便签内容接口,测试能否正常更新便签内容
+[INFO]13:59:39:370-test_handle.py:27 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:39:371-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:39:520-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":32,"infoVersion":1,"infoUpdateTime":1766642381125}
+[INFO]13:59:39:521-test_handle.py:30 >> 前置构建的便签主体数据返回的便签id:383d11389e6743a5a60a23e3720c7da4
+[CASE]13:59:39:522-test_handle.py:33 >> 【请求上传便签内容】
+[INFO]13:59:39:523-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:39:524-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:39:525-buRequests.py:15 >> request body: {'noteId': '383d11389e6743a5a60a23e3720c7da4', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:39:670-buRequests.py:21 >> response code: 200
+[INFO]13:59:39:671-buRequests.py:22 >> response body: {"responseTime":29,"contentVersion":1,"contentUpdateTime":1766642381277}
+[CASE]13:59:39:672-test_handle.py:53 >> 【更新便签内容】
+[INFO]13:59:39:673-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:39:674-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:39:674-buRequests.py:15 >> request body: {'noteId': '383d11389e6743a5a60a23e3720c7da4', 'title': 'test2', 'summary': 'test2', 'body': 'test2', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:39:869-buRequests.py:21 >> response code: 200
+[INFO]13:59:39:870-buRequests.py:22 >> response body: {"responseTime":35,"contentVersion":2,"contentUpdateTime":1766642381473}
+[CASE]13:59:39:871-caseLog.py:75 >> Case run time: 0.61s
+[CASE]13:59:40:541-caseLog.py:71 >> Method Name:testCase02_error_updateNoteContent, Class Name:CreateNoteContentHandle
+[CASE]13:59:40:542-caseLog.py:72 >> Test Description:请求上传便签内容接口,测试更新便签内容时输入错误的版本号
+[INFO]13:59:40:543-test_handle.py:74 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:40:543-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:40:696-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":30,"infoVersion":1,"infoUpdateTime":1766642382300}
+[INFO]13:59:40:697-test_handle.py:77 >> 前置构建的便签主体数据返回的便签id:469c33c7629a44ff8aab60e554053c6f
+[CASE]13:59:40:697-test_handle.py:80 >> 【请求上传便签内容】
+[INFO]13:59:40:698-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:40:699-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:40:700-buRequests.py:15 >> request body: {'noteId': '469c33c7629a44ff8aab60e554053c6f', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:40:891-buRequests.py:21 >> response code: 200
+[INFO]13:59:40:891-buRequests.py:22 >> response body: {"responseTime":36,"contentVersion":1,"contentUpdateTime":1766642382494}
+[CASE]13:59:40:892-test_handle.py:99 >> 【更新便签内容】
+[INFO]13:59:40:893-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:40:894-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:40:894-buRequests.py:15 >> request body: {'noteId': '469c33c7629a44ff8aab60e554053c6f', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 2, 'BodyType': 0}
+[INFO]13:59:41:057-buRequests.py:21 >> response code: 412
+[INFO]13:59:41:058-buRequests.py:22 >> response body: {"errorCode":-1003,"errorMsg":"content version not equal!"}
+[CASE]13:59:41:059-caseLog.py:75 >> Case run time: 0.52s
+[CASE]13:59:41:797-caseLog.py:71 >> Method Name:testCase03_notFountNoteId_updateNoteContent, Class Name:CreateNoteContentHandle
+[CASE]13:59:41:798-caseLog.py:72 >> Test Description:请求上传便签内容接口,测试更新便签内容时输入不存在的noteId
+[INFO]13:59:41:799-test_handle.py:119 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:41:800-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:41:975-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":32,"infoVersion":1,"infoUpdateTime":1766642383582}
+[INFO]13:59:41:976-test_handle.py:122 >> 前置构建的便签主体数据返回的便签id:316adc027da74666bf4578b6973de32a
+[CASE]13:59:41:977-test_handle.py:125 >> 【请求上传便签内容】
+[INFO]13:59:41:978-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:41:979-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:41:980-buRequests.py:15 >> request body: {'noteId': '316adc027da74666bf4578b6973de32a', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:42:150-buRequests.py:21 >> response code: 200
+[INFO]13:59:42:151-buRequests.py:22 >> response body: {"responseTime":33,"contentVersion":1,"contentUpdateTime":1766642383759}
+[CASE]13:59:42:152-test_handle.py:145 >> 【更新便签内容】
+[INFO]13:59:42:153-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:42:154-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:42:155-buRequests.py:15 >> request body: {'noteId': '1111111111', 'title': 'test2', 'summary': 'test2', 'body': 'test2', 'localContentVersion': 2, 'BodyType': 0}
+[INFO]13:59:42:337-buRequests.py:21 >> response code: 200
+[INFO]13:59:42:338-buRequests.py:22 >> response body: {"responseTime":54,"contentVersion":6,"contentUpdateTime":1766642383905}
+[CASE]13:59:43:091-caseLog.py:71 >> Method Name:testCase04_permissionRestrictions, Class Name:CreateNoteContentHandle
+[CASE]13:59:43:092-caseLog.py:72 >> Test Description:请求上传便签内容接口,用其他用户获取当前用户所创建的便签内容(接口越权)
+[INFO]13:59:43:093-test_handle.py:165 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:43:094-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:43:247-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":26,"infoVersion":1,"infoUpdateTime":1766642384847}
+[INFO]13:59:43:248-test_handle.py:168 >> 前置构建的便签主体数据返回的便签id:774d375b96ab42e0bb5c5065f6cde089
+[CASE]13:59:43:249-test_handle.py:171 >> 【请求上传便签内容】
+[INFO]13:59:43:249-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:43:250-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae8e;', 'X-user-key': '1123710849', 'Content-Type': 'application/json'}
+[INFO]13:59:43:251-buRequests.py:15 >> request body: {'noteId': '774d375b96ab42e0bb5c5065f6cde089', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:43:406-buRequests.py:21 >> response code: 401
+[INFO]13:59:43:408-buRequests.py:22 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]13:59:43:869-caseLog.py:71 >> Method Name:testCase05_error_localContentVersion, Class Name:CreateNoteContentHandle
+[CASE]13:59:43:870-caseLog.py:72 >> Test Description:请求上传便签内容接口,测试上传便签内容的请求参数localContentVersion输入0的情况
+[INFO]13:59:43:871-test_handle.py:196 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:43:872-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:44:023-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":32,"infoVersion":1,"infoUpdateTime":1766642385628}
+[INFO]13:59:44:024-test_handle.py:199 >> 前置构建的便签主体数据返回的便签id:25b976c8b44c412a8559fe0731be4bcd
+[CASE]13:59:44:025-test_handle.py:202 >> 【请求上传便签内容接口】
+[INFO]13:59:44:026-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:44:027-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:44:028-buRequests.py:15 >> request body: {'noteId': '25b976c8b44c412a8559fe0731be4bcd', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 0, 'BodyType': 0}
+[INFO]13:59:44:173-buRequests.py:21 >> response code: 200
+[INFO]13:59:44:174-buRequests.py:22 >> response body: {"responseTime":29,"contentVersion":1,"contentUpdateTime":1766642385784}
+[CASE]13:59:44:871-caseLog.py:71 >> Method Name:testCase06_error_bodyType, Class Name:CreateNoteContentHandle
+[CASE]13:59:44:872-caseLog.py:72 >> Test Description:请求上传便签内容接口,测试上传便签内容的请求参数BodyType输入-1的情况
+[INFO]13:59:44:873-test_handle.py:222 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:44:874-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:45:020-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642386623}
+[INFO]13:59:45:021-test_handle.py:225 >> 前置构建的便签主体数据返回的便签id:3951d6ce4f274259b51ead799b8e426b
+[CASE]13:59:45:022-test_handle.py:228 >> 【请求上传便签内容接口】
+[INFO]13:59:45:023-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:45:023-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:45:024-buRequests.py:15 >> request body: {'noteId': '3951d6ce4f274259b51ead799b8e426b', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': -1}
+[INFO]13:59:45:176-buRequests.py:21 >> response code: 200
+[INFO]13:59:45:177-buRequests.py:22 >> response body: {"responseTime":38,"contentVersion":1,"contentUpdateTime":1766642386783}
+[CASE]13:59:45:796-caseLog.py:71 >> Method Name:testCase07_createGroupNote, Class Name:CreateNoteContentHandle
+[CASE]13:59:45:797-caseLog.py:72 >> Test Description:请求上传便签内容接口,测试上传分组便签数据
+[INFO]13:59:45:798-test_handle.py:248 >> 【前置条件】新增一条分组数据
+[INFO]13:59:45:955-test_handle.py:251 >> 前置构建的分组便签主体数据返回的便签id:98aa09b869fc44f68c1291b944db0954
+[INFO]13:59:45:956-test_handle.py:253 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:45:957-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:46:105-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642387707}
+[INFO]13:59:46:106-test_handle.py:256 >> 前置构建的便签主体数据返回的便签id:2f6c8d5f9d2742d49e72cc9a7d14efcc
+[CASE]13:59:46:107-test_handle.py:259 >> 【请求上传便签内容接口】
+[INFO]13:59:46:108-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:46:109-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:46:110-buRequests.py:15 >> request body: {'noteId': '2f6c8d5f9d2742d49e72cc9a7d14efcc', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:46:261-buRequests.py:21 >> response code: 200
+[INFO]13:59:46:262-buRequests.py:22 >> response body: {"responseTime":32,"contentVersion":1,"contentUpdateTime":1766642387864}
+[INFO]13:59:46:263-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]13:59:46:264-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]13:59:46:264-buRequests.py:34 >> request body: None
+[INFO]13:59:46:414-buRequests.py:43 >> response code: 200
+[INFO]13:59:46:415-buRequests.py:44 >> response body: {"responseTime":0,"webNotes":[]}
+[INFO]13:59:46:416-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/web/getnotes/group
+[INFO]13:59:46:417-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:46:418-buRequests.py:15 >> request body: {'groupId': '98aa09b869fc44f68c1291b944db0954', 'startIndex': 0, 'rows': 10}
+[INFO]13:59:46:669-buRequests.py:21 >> response code: 200
+[INFO]13:59:46:670-buRequests.py:22 >> response body: {"responseTime":0,"webNotes":[{"noteId":"2f6c8d5f9d2742d49e72cc9a7d14efcc","createTime":1766642387707,"star":1,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642387707,"groupId":"98aa09b869fc44f68c1291b944db0954","title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642387864}]}
+[CASE]13:59:46:671-caseLog.py:75 >> Case run time: 0.88s
+[CASE]13:59:46:977-caseLog.py:71 >> Method Name:testCase01_remove_must_key_0_noteId, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:46:978-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项缺失校验 [with key='noteId', code=500]
+[INFO]13:59:46:979-test_input.py:32 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:46:981-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:47:125-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":29,"infoVersion":1,"infoUpdateTime":1766642388729}
+[INFO]13:59:47:126-test_input.py:35 >> 前置构建的便签主体数据返回的便签id:75704f05b3dc46e5b1477c72b26efca2
+[CASE]13:59:47:127-test_input.py:37 >> Case01:必填项noteId缺少校验
+[INFO]13:59:47:128-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:47:129-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:47:131-buRequests.py:15 >> request body: {'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:47:259-buRequests.py:21 >> response code: 500
+[INFO]13:59:47:260-buRequests.py:22 >> response body: {"errorCode":-7,"errorMsg":"参数不合法！"}
+[CASE]13:59:47:261-caseLog.py:75 >> Case run time: 0.28s
+[CASE]13:59:47:569-caseLog.py:71 >> Method Name:testCase01_remove_must_key_1_title, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:47:570-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项缺失校验 [with key='title', code=200]
+[INFO]13:59:47:571-test_input.py:32 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:47:572-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:47:726-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":30,"infoVersion":1,"infoUpdateTime":1766642389331}
+[INFO]13:59:47:727-test_input.py:35 >> 前置构建的便签主体数据返回的便签id:17a8b2d1c6b84db883a21a8bc9fb44e8
+[CASE]13:59:47:727-test_input.py:37 >> Case01:必填项title缺少校验
+[INFO]13:59:47:728-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:47:729-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:47:729-buRequests.py:15 >> request body: {'noteId': '17a8b2d1c6b84db883a21a8bc9fb44e8', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:47:899-buRequests.py:21 >> response code: 200
+[INFO]13:59:47:900-buRequests.py:22 >> response body: {"responseTime":34,"contentVersion":1,"contentUpdateTime":1766642389509}
+[CASE]13:59:47:901-caseLog.py:75 >> Case run time: 0.33s
+[CASE]13:59:48:349-caseLog.py:71 >> Method Name:testCase01_remove_must_key_2_summary, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:48:350-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项缺失校验 [with key='summary', code=200]
+[INFO]13:59:48:351-test_input.py:32 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:48:351-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:48:499-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":29,"infoVersion":1,"infoUpdateTime":1766642390105}
+[INFO]13:59:48:501-test_input.py:35 >> 前置构建的便签主体数据返回的便签id:ab09aedde7aa49ae91b75fa297361cc4
+[CASE]13:59:48:501-test_input.py:37 >> Case01:必填项summary缺少校验
+[INFO]13:59:48:502-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:48:503-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:48:504-buRequests.py:15 >> request body: {'noteId': 'ab09aedde7aa49ae91b75fa297361cc4', 'title': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:48:743-buRequests.py:21 >> response code: 200
+[INFO]13:59:48:744-buRequests.py:22 >> response body: {"responseTime":30,"contentVersion":1,"contentUpdateTime":1766642390353}
+[CASE]13:59:48:745-caseLog.py:75 >> Case run time: 0.40s
+[CASE]13:59:49:190-caseLog.py:71 >> Method Name:testCase01_remove_must_key_3_body, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:49:191-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项缺失校验 [with key='body', code=412]
+[INFO]13:59:49:192-test_input.py:32 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:49:193-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:49:349-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":33,"infoVersion":1,"infoUpdateTime":1766642390954}
+[INFO]13:59:49:350-test_input.py:35 >> 前置构建的便签主体数据返回的便签id:5835157060d8401982263d5981958edd
+[CASE]13:59:49:351-test_input.py:37 >> Case01:必填项body缺少校验
+[INFO]13:59:49:352-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:49:353-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:49:353-buRequests.py:15 >> request body: {'noteId': '5835157060d8401982263d5981958edd', 'title': 'test', 'summary': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:49:500-buRequests.py:21 >> response code: 412
+[INFO]13:59:49:501-buRequests.py:22 >> response body: {"errorCode":-1012,"errorMsg":"Note body Requested!"}
+[CASE]13:59:49:502-caseLog.py:75 >> Case run time: 0.31s
+[CASE]13:59:49:804-caseLog.py:71 >> Method Name:testCase01_remove_must_key_4_localContentVersion, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:49:805-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项缺失校验 [with key='localContentVersion', code=200]
+[INFO]13:59:49:806-test_input.py:32 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:49:807-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:49:973-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":35,"infoVersion":1,"infoUpdateTime":1766642391575}
+[INFO]13:59:49:975-test_input.py:35 >> 前置构建的便签主体数据返回的便签id:6699593eb5ff4cc3b918f04ca48424be
+[CASE]13:59:49:975-test_input.py:37 >> Case01:必填项localContentVersion缺少校验
+[INFO]13:59:49:976-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:49:977-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:49:978-buRequests.py:15 >> request body: {'noteId': '6699593eb5ff4cc3b918f04ca48424be', 'title': 'test', 'summary': 'test', 'body': 'test', 'BodyType': 0}
+[INFO]13:59:50:157-buRequests.py:21 >> response code: 200
+[INFO]13:59:50:158-buRequests.py:22 >> response body: {"responseTime":34,"contentVersion":1,"contentUpdateTime":1766642391763}
+[CASE]13:59:50:159-caseLog.py:75 >> Case run time: 0.36s
+[CASE]13:59:50:626-caseLog.py:71 >> Method Name:testCase01_remove_must_key_5_BodyType, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:50:627-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项缺失校验 [with key='BodyType', code=200]
+[INFO]13:59:50:628-test_input.py:32 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:50:629-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:50:892-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":30,"infoVersion":1,"infoUpdateTime":1766642392495}
+[INFO]13:59:50:893-test_input.py:35 >> 前置构建的便签主体数据返回的便签id:30e699bf70fa4d97b87b9869b676c585
+[CASE]13:59:50:894-test_input.py:37 >> Case01:必填项BodyType缺少校验
+[INFO]13:59:50:895-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:50:896-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:50:897-buRequests.py:15 >> request body: {'noteId': '30e699bf70fa4d97b87b9869b676c585', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1}
+[INFO]13:59:51:064-buRequests.py:21 >> response code: 200
+[INFO]13:59:51:066-buRequests.py:22 >> response body: {"responseTime":32,"contentVersion":1,"contentUpdateTime":1766642392674}
+[CASE]13:59:51:066-caseLog.py:75 >> Case run time: 0.44s
+[CASE]13:59:51:541-caseLog.py:71 >> Method Name:testCase02_null_must_key_0_noteId, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:51:542-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为null [with key='noteId', code=500]
+[INFO]13:59:51:543-test_input.py:54 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:51:544-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:51:698-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":33,"infoVersion":1,"infoUpdateTime":1766642393304}
+[INFO]13:59:51:699-test_input.py:57 >> 前置构建的便签主体数据返回的便签id:f94507bb7b04429ebe6d334d2ce41a43
+[CASE]13:59:51:700-test_input.py:59 >> Case03:必填项noteId值为null
+[INFO]13:59:51:701-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:51:701-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:51:702-buRequests.py:15 >> request body: {'noteId': None, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:51:852-buRequests.py:21 >> response code: 500
+[INFO]13:59:51:853-buRequests.py:22 >> response body: {"errorCode":-7,"errorMsg":"参数不合法！"}
+[CASE]13:59:51:855-caseLog.py:75 >> Case run time: 0.31s
+[CASE]13:59:52:162-caseLog.py:71 >> Method Name:testCase02_null_must_key_1_title, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:52:163-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为null [with key='title', code=200]
+[INFO]13:59:52:164-test_input.py:54 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:52:165-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:52:321-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":33,"infoVersion":1,"infoUpdateTime":1766642393925}
+[INFO]13:59:52:322-test_input.py:57 >> 前置构建的便签主体数据返回的便签id:3d4ac46923504e6585cd61416213ec5b
+[CASE]13:59:52:323-test_input.py:59 >> Case03:必填项title值为null
+[INFO]13:59:52:324-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:52:325-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:52:326-buRequests.py:15 >> request body: {'noteId': '3d4ac46923504e6585cd61416213ec5b', 'title': None, 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:52:544-buRequests.py:21 >> response code: 200
+[INFO]13:59:52:545-buRequests.py:22 >> response body: {"responseTime":33,"contentVersion":1,"contentUpdateTime":1766642394150}
+[CASE]13:59:52:546-caseLog.py:75 >> Case run time: 0.38s
+[CASE]13:59:53:108-caseLog.py:71 >> Method Name:testCase02_null_must_key_2_summary, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:53:109-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为null [with key='summary', code=200]
+[INFO]13:59:53:109-test_input.py:54 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:53:110-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:53:263-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":34,"infoVersion":1,"infoUpdateTime":1766642394866}
+[INFO]13:59:53:264-test_input.py:57 >> 前置构建的便签主体数据返回的便签id:9aa8187b56704d2c9115fcf393017e0f
+[CASE]13:59:53:265-test_input.py:59 >> Case03:必填项summary值为null
+[INFO]13:59:53:266-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:53:267-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:53:268-buRequests.py:15 >> request body: {'noteId': '9aa8187b56704d2c9115fcf393017e0f', 'title': 'test', 'summary': None, 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:53:440-buRequests.py:21 >> response code: 200
+[INFO]13:59:53:441-buRequests.py:22 >> response body: {"responseTime":31,"contentVersion":1,"contentUpdateTime":1766642395044}
+[CASE]13:59:53:442-caseLog.py:75 >> Case run time: 0.33s
+[CASE]13:59:53:916-caseLog.py:71 >> Method Name:testCase02_null_must_key_3_body, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:53:917-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为null [with key='body', code=412]
+[INFO]13:59:53:918-test_input.py:54 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:53:918-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:54:077-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":32,"infoVersion":1,"infoUpdateTime":1766642395682}
+[INFO]13:59:54:078-test_input.py:57 >> 前置构建的便签主体数据返回的便签id:f2ec3ebdab8e49c680e17d6e53b60653
+[CASE]13:59:54:079-test_input.py:59 >> Case03:必填项body值为null
+[INFO]13:59:54:079-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:54:080-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:54:081-buRequests.py:15 >> request body: {'noteId': 'f2ec3ebdab8e49c680e17d6e53b60653', 'title': 'test', 'summary': 'test', 'body': None, 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:54:217-buRequests.py:21 >> response code: 412
+[INFO]13:59:54:218-buRequests.py:22 >> response body: {"errorCode":-1012,"errorMsg":"Note body Requested!"}
+[CASE]13:59:54:219-caseLog.py:75 >> Case run time: 0.30s
+[CASE]13:59:54:535-caseLog.py:71 >> Method Name:testCase02_null_must_key_4_localContentVersion, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:54:536-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为null [with key='localContentVersion', code=200]
+[INFO]13:59:54:536-test_input.py:54 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:54:537-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:54:673-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":28,"infoVersion":1,"infoUpdateTime":1766642396279}
+[INFO]13:59:54:675-test_input.py:57 >> 前置构建的便签主体数据返回的便签id:df6ceae1c2ba48dba58d4d74d7df5470
+[CASE]13:59:54:676-test_input.py:59 >> Case03:必填项localContentVersion值为null
+[INFO]13:59:54:676-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:54:677-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:54:678-buRequests.py:15 >> request body: {'noteId': 'df6ceae1c2ba48dba58d4d74d7df5470', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': None, 'BodyType': 0}
+[INFO]13:59:54:948-buRequests.py:21 >> response code: 200
+[INFO]13:59:54:949-buRequests.py:22 >> response body: {"responseTime":32,"contentVersion":1,"contentUpdateTime":1766642396449}
+[CASE]13:59:54:950-caseLog.py:75 >> Case run time: 0.42s
+[CASE]13:59:55:437-caseLog.py:71 >> Method Name:testCase02_null_must_key_5_BodyType, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:55:438-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为null [with key='BodyType', code=200]
+[INFO]13:59:55:439-test_input.py:54 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:55:439-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:55:588-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":33,"infoVersion":1,"infoUpdateTime":1766642397190}
+[INFO]13:59:55:589-test_input.py:57 >> 前置构建的便签主体数据返回的便签id:8704f431597b48d7b759e94a701fdfaa
+[CASE]13:59:55:590-test_input.py:59 >> Case03:必填项BodyType值为null
+[INFO]13:59:55:590-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:55:591-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:55:592-buRequests.py:15 >> request body: {'noteId': '8704f431597b48d7b759e94a701fdfaa', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': None}
+[INFO]13:59:55:765-buRequests.py:21 >> response code: 200
+[INFO]13:59:55:766-buRequests.py:22 >> response body: {"responseTime":29,"contentVersion":1,"contentUpdateTime":1766642397369}
+[CASE]13:59:55:767-caseLog.py:75 >> Case run time: 0.33s
+[CASE]13:59:57:281-caseLog.py:71 >> Method Name:testCase03_valueEmptyString_must_key_0_noteId, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:57:282-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为空字符串 [with key='noteId', code=500]
+[INFO]13:59:57:283-test_input.py:76 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:57:284-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:57:434-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":30,"infoVersion":1,"infoUpdateTime":1766642399040}
+[INFO]13:59:57:436-test_input.py:79 >> 前置构建的便签主体数据返回的便签id:3f06ea299e3f4fcb8bc94089adfcb215
+[CASE]13:59:57:436-test_input.py:81 >> Case03:必填项noteId值为""
+[INFO]13:59:57:437-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:57:438-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:57:439-buRequests.py:15 >> request body: {'noteId': '', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:57:566-buRequests.py:21 >> response code: 500
+[INFO]13:59:57:567-buRequests.py:22 >> response body: {"errorCode":-7,"errorMsg":"参数不合法！"}
+[CASE]13:59:57:568-caseLog.py:75 >> Case run time: 0.29s
+[CASE]13:59:57:874-caseLog.py:71 >> Method Name:testCase03_valueEmptyString_must_key_1_title, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:57:875-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为空字符串 [with key='title', code=200]
+[INFO]13:59:57:876-test_input.py:76 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:57:877-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:58:025-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642399632}
+[INFO]13:59:58:026-test_input.py:79 >> 前置构建的便签主体数据返回的便签id:c930da38e8424824aa40a6dfb2a25a9c
+[CASE]13:59:58:027-test_input.py:81 >> Case03:必填项title值为""
+[INFO]13:59:58:028-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:58:029-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:58:030-buRequests.py:15 >> request body: {'noteId': 'c930da38e8424824aa40a6dfb2a25a9c', 'title': '', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:58:312-buRequests.py:21 >> response code: 200
+[INFO]13:59:58:313-buRequests.py:22 >> response body: {"responseTime":27,"contentVersion":1,"contentUpdateTime":1766642399793}
+[CASE]13:59:58:314-caseLog.py:75 >> Case run time: 0.44s
+[CASE]13:59:58:787-caseLog.py:71 >> Method Name:testCase03_valueEmptyString_must_key_2_summary, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:58:788-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为空字符串 [with key='summary', code=200]
+[INFO]13:59:58:789-test_input.py:76 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:58:790-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:58:940-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":34,"infoVersion":1,"infoUpdateTime":1766642400546}
+[INFO]13:59:58:941-test_input.py:79 >> 前置构建的便签主体数据返回的便签id:68ef7b338e8346e890445023db7bb362
+[CASE]13:59:58:942-test_input.py:81 >> Case03:必填项summary值为""
+[INFO]13:59:58:942-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:58:943-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:58:944-buRequests.py:15 >> request body: {'noteId': '68ef7b338e8346e890445023db7bb362', 'title': 'test', 'summary': '', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:59:146-buRequests.py:21 >> response code: 200
+[INFO]13:59:59:147-buRequests.py:22 >> response body: {"responseTime":40,"contentVersion":1,"contentUpdateTime":1766642400710}
+[CASE]13:59:59:148-caseLog.py:75 >> Case run time: 0.36s
+[CASE]13:59:59:615-caseLog.py:71 >> Method Name:testCase03_valueEmptyString_must_key_3_body, Class Name:CreateNoteContentCaseInput
+[CASE]13:59:59:616-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为空字符串 [with key='body', code=412]
+[INFO]13:59:59:616-test_input.py:76 >> 【前置条件】新增一条便签主体数据
+[INFO]13:59:59:617-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]13:59:59:775-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":36,"infoVersion":1,"infoUpdateTime":1766642401382}
+[INFO]13:59:59:776-test_input.py:79 >> 前置构建的便签主体数据返回的便签id:efcf68bc4b1b44d89d882a2a0955b868
+[CASE]13:59:59:777-test_input.py:81 >> Case03:必填项body值为""
+[INFO]13:59:59:777-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]13:59:59:778-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]13:59:59:779-buRequests.py:15 >> request body: {'noteId': 'efcf68bc4b1b44d89d882a2a0955b868', 'title': 'test', 'summary': 'test', 'body': '', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]13:59:59:915-buRequests.py:21 >> response code: 412
+[INFO]13:59:59:916-buRequests.py:22 >> response body: {"errorCode":-1012,"errorMsg":"Note body Requested!"}
+[CASE]13:59:59:917-caseLog.py:75 >> Case run time: 0.30s
+[CASE]14:00:00:214-caseLog.py:71 >> Method Name:testCase03_valueEmptyString_must_key_4_localContentVersion, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:00:215-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为空字符串 [with key='localContentVersion', code=200]
+[INFO]14:00:00:216-test_input.py:76 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:00:217-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:00:379-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":26,"infoVersion":1,"infoUpdateTime":1766642401981}
+[INFO]14:00:00:380-test_input.py:79 >> 前置构建的便签主体数据返回的便签id:17467f3b726f48149c7c851d36f9a004
+[CASE]14:00:00:381-test_input.py:81 >> Case03:必填项localContentVersion值为""
+[INFO]14:00:00:382-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:00:383-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]14:00:00:384-buRequests.py:15 >> request body: {'noteId': '17467f3b726f48149c7c851d36f9a004', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': '', 'BodyType': 0}
+[INFO]14:00:00:558-buRequests.py:21 >> response code: 200
+[INFO]14:00:00:560-buRequests.py:22 >> response body: {"responseTime":33,"contentVersion":1,"contentUpdateTime":1766642402163}
+[CASE]14:00:00:560-caseLog.py:75 >> Case run time: 0.35s
+[CASE]14:00:01:010-caseLog.py:71 >> Method Name:testCase03_valueEmptyString_must_key_5_BodyType, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:01:011-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的必填项的值为空字符串 [with key='BodyType', code=200]
+[INFO]14:00:01:012-test_input.py:76 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:01:013-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:01:247-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642402764}
+[INFO]14:00:01:248-test_input.py:79 >> 前置构建的便签主体数据返回的便签id:1a4f7e01e421452aaa94cd18addea474
+[CASE]14:00:01:249-test_input.py:81 >> Case03:必填项BodyType值为""
+[INFO]14:00:01:249-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:01:250-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]14:00:01:251-buRequests.py:15 >> request body: {'noteId': '1a4f7e01e421452aaa94cd18addea474', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': ''}
+[INFO]14:00:01:402-buRequests.py:21 >> response code: 200
+[INFO]14:00:01:403-buRequests.py:22 >> response body: {"responseTime":33,"contentVersion":1,"contentUpdateTime":1766642403007}
+[CASE]14:00:01:404-caseLog.py:75 >> Case run time: 0.39s
+[CASE]14:00:01:863-caseLog.py:71 >> Method Name:testCase04_removeKey_xUserKey_must_key, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:01:864-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头X-User-Key的字段缺失
+[INFO]14:00:01:865-test_input.py:97 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:01:866-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:02:021-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":39,"infoVersion":1,"infoUpdateTime":1766642403624}
+[INFO]14:00:02:022-test_input.py:100 >> 前置构建的便签主体数据返回的便签id:274085916cb14820baaa730040833026
+[CASE]14:00:02:023-test_input.py:102 >> Case04:X-Key-User字段缺失""
+[INFO]14:00:02:024-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:02:025-buRequests.py:14 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:02:026-buRequests.py:15 >> request body: {'noteId': '274085916cb14820baaa730040833026', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:02:135-buRequests.py:21 >> response code: 412
+[INFO]14:00:02:137-buRequests.py:22 >> response body: {"errorCode":-1011,"errorMsg":"X-user-key header Requested!"}
+[CASE]14:00:02:138-caseLog.py:75 >> Case run time: 0.27s
+[CASE]14:00:02:439-caseLog.py:71 >> Method Name:testCase05_valueNull_xUserKey_must_key, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:02:440-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头X-User-Key的字段值为null
+[INFO]14:00:02:440-test_input.py:127 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:02:441-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:02:592-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":34,"infoVersion":1,"infoUpdateTime":1766642404196}
+[INFO]14:00:02:593-test_input.py:130 >> 前置构建的便签主体数据返回的便签id:393168f640624ebe9b89aa55936e3d77
+[CASE]14:00:02:594-test_input.py:132 >> Case05:X-Key-User字段的值为null
+[INFO]14:00:02:595-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:02:596-buRequests.py:14 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': None}
+[INFO]14:00:02:597-buRequests.py:15 >> request body: {'noteId': '393168f640624ebe9b89aa55936e3d77', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:02:744-buRequests.py:21 >> response code: 412
+[INFO]14:00:02:745-buRequests.py:22 >> response body: {"errorCode":-1011,"errorMsg":"X-user-key header Requested!"}
+[CASE]14:00:02:746-caseLog.py:75 >> Case run time: 0.31s
+[CASE]14:00:03:063-caseLog.py:71 >> Method Name:testCase06_valueEmpty_xUserKey_must_key, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:03:064-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头X-User-Key的字段值为空字符串
+[INFO]14:00:03:065-test_input.py:158 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:03:066-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:03:222-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":29,"infoVersion":1,"infoUpdateTime":1766642404828}
+[INFO]14:00:03:223-test_input.py:161 >> 前置构建的便签主体数据返回的便签id:d3a3f49f70dc4aed98eb2f03f9092a94
+[CASE]14:00:03:224-test_input.py:163 >> Case06:X-Key-User字段的值为""
+[INFO]14:00:03:225-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:03:225-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '', 'Content-Type': 'application/json'}
+[INFO]14:00:03:226-buRequests.py:15 >> request body: {'noteId': 'd3a3f49f70dc4aed98eb2f03f9092a94', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:03:456-buRequests.py:21 >> response code: 412
+[INFO]14:00:03:457-buRequests.py:22 >> response body: {"errorCode":-1011,"errorMsg":"X-user-key header Requested!"}
+[CASE]14:00:03:458-caseLog.py:75 >> Case run time: 0.40s
+[CASE]14:00:03:765-caseLog.py:71 >> Method Name:testCase07_boundary_xUserKey, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:03:766-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头X-User-Key的边界值
+[INFO]14:00:03:766-test_input.py:184 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:03:767-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:03:932-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":33,"infoVersion":1,"infoUpdateTime":1766642405532}
+[INFO]14:00:03:933-test_input.py:187 >> 前置构建的便签主体数据返回的便签id:bac638880eef4044a3377b54c68af6af
+[CASE]14:00:03:934-test_input.py:189 >> Case07:X-Key-User字段的值超出边界值
+[INFO]14:00:03:935-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:03:936-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '11226108471', 'Content-Type': 'application/json'}
+[INFO]14:00:03:937-buRequests.py:15 >> request body: {'noteId': 'bac638880eef4044a3377b54c68af6af', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:04:093-buRequests.py:21 >> response code: 412
+[INFO]14:00:04:094-buRequests.py:22 >> response body: {"errorCode":-1011,"errorMsg":"user change!"}
+[CASE]14:00:04:095-caseLog.py:75 >> Case run time: 0.33s
+[CASE]14:00:04:417-caseLog.py:71 >> Method Name:testCase08_specialChar_xUserKey, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:04:418-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头X-User-Key的值存在特殊标点字符
+[INFO]14:00:04:419-test_input.py:213 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:04:420-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:04:591-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":51,"infoVersion":1,"infoUpdateTime":1766642406178}
+[INFO]14:00:04:593-test_input.py:216 >> 前置构建的便签主体数据返回的便签id:3513fcbb6967415eb0b5af6a3bd1a22c
+[CASE]14:00:04:593-test_input.py:218 >> Case08:X-Key-User字段的值存在特殊标点字符
+[INFO]14:00:04:594-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:04:595-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847.', 'Content-Type': 'application/json'}
+[INFO]14:00:04:596-buRequests.py:15 >> request body: {'noteId': '3513fcbb6967415eb0b5af6a3bd1a22c', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:04:755-buRequests.py:21 >> response code: 500
+[INFO]14:00:04:756-buRequests.py:22 >> response body: {"errorCode":-7,"errorMsg":"参数类型错误！"}
+[CASE]14:00:04:757-caseLog.py:75 >> Case run time: 0.34s
+[CASE]14:00:05:064-caseLog.py:71 >> Method Name:testCase09_notEnum_xUserKey, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:05:065-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头X-User-Key的值为非枚举值
+[INFO]14:00:05:066-test_input.py:242 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:05:067-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:05:225-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":33,"infoVersion":1,"infoUpdateTime":1766642406833}
+[INFO]14:00:05:226-test_input.py:245 >> 前置构建的便签主体数据返回的便签id:42287b63edb04705992b1dba02796205
+[CASE]14:00:05:227-test_input.py:247 >> Case09:X-Key-User字段的值为非枚举值
+[INFO]14:00:05:228-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:05:229-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1111111111', 'Content-Type': 'application/json'}
+[INFO]14:00:05:230-buRequests.py:15 >> request body: {'noteId': '42287b63edb04705992b1dba02796205', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:05:447-buRequests.py:21 >> response code: 412
+[INFO]14:00:05:448-buRequests.py:22 >> response body: {"errorCode":-1011,"errorMsg":"user change!"}
+[CASE]14:00:05:449-caseLog.py:75 >> Case run time: 0.39s
+[CASE]14:00:05:795-caseLog.py:71 >> Method Name:testCase10_keyRemove_sid, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:05:796-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头wps_sid的字段缺失
+[INFO]14:00:05:797-test_input.py:271 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:05:798-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:05:939-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":30,"infoVersion":1,"infoUpdateTime":1766642407543}
+[INFO]14:00:05:940-test_input.py:274 >> 前置构建的便签主体数据返回的便签id:c0a4979246d646039359f133e050c2c8
+[CASE]14:00:05:941-test_input.py:276 >> Case010:wps_sid的字段缺失
+[INFO]14:00:05:942-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:05:943-buRequests.py:14 >> request headers: {'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]14:00:05:943-buRequests.py:15 >> request body: {'noteId': 'c0a4979246d646039359f133e050c2c8', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:06:083-buRequests.py:21 >> response code: 401
+[INFO]14:00:06:084-buRequests.py:22 >> response body: {"errorCode":-2009,"errorMsg":""}
+[CASE]14:00:06:085-caseLog.py:75 >> Case run time: 0.29s
+[CASE]14:00:06:391-caseLog.py:71 >> Method Name:testCase11_valueKeyEmptyString_sid, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:06:392-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头wps_sid的字段值为空字符串
+[INFO]14:00:06:393-test_input.py:302 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:06:394-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:06:539-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":32,"infoVersion":1,"infoUpdateTime":1766642408140}
+[INFO]14:00:06:540-test_input.py:305 >> 前置构建的便签主体数据返回的便签id:09b42c685a884275941850f8977410a6
+[CASE]14:00:06:541-test_input.py:307 >> Case011:wps_sid的字段值为空字符串
+[INFO]14:00:06:542-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:06:543-buRequests.py:14 >> request headers: {'X-user-key': '1122610847', 'Content-Type': 'application/json', 'Cookie': 'wps_sid=""'}
+[INFO]14:00:06:544-buRequests.py:15 >> request body: {'noteId': '09b42c685a884275941850f8977410a6', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:06:681-buRequests.py:21 >> response code: 401
+[INFO]14:00:06:682-buRequests.py:22 >> response body: {"errorCode":-2009,"errorMsg":""}
+[CASE]14:00:06:683-caseLog.py:75 >> Case run time: 0.29s
+[CASE]14:00:07:010-caseLog.py:71 >> Method Name:testCase12_valueNull_sid, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:07:011-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头wps_sid的字段值为null
+[INFO]14:00:07:012-test_input.py:334 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:07:013-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:07:179-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":30,"infoVersion":1,"infoUpdateTime":1766642408785}
+[INFO]14:00:07:180-test_input.py:337 >> 前置构建的便签主体数据返回的便签id:58ab54fd79534a1485970df2c0d5ae8b
+[CASE]14:00:07:181-test_input.py:339 >> Case012:wps_sid的字段值为null
+[INFO]14:00:07:181-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:07:182-buRequests.py:14 >> request headers: {'X-user-key': '1122610847', 'Content-Type': 'application/json', 'Cookie': 'wps_sid=null'}
+[INFO]14:00:07:183-buRequests.py:15 >> request body: {'noteId': '58ab54fd79534a1485970df2c0d5ae8b', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:07:322-buRequests.py:21 >> response code: 401
+[INFO]14:00:07:323-buRequests.py:22 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]14:00:07:324-caseLog.py:75 >> Case run time: 0.31s
+[CASE]14:00:07:707-caseLog.py:71 >> Method Name:testCase13_error_sid, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:07:708-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头wps_sid的字段值为错误的sid
+[INFO]14:00:07:709-test_input.py:366 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:07:710-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:07:860-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642409462}
+[INFO]14:00:07:861-test_input.py:369 >> 前置构建的便签主体数据返回的便签id:ac83a4dff2594c7aa4591aea903102df
+[CASE]14:00:07:862-test_input.py:371 >> Case013:wps_sid的字段值为错误的sid
+[INFO]14:00:07:863-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:07:863-buRequests.py:14 >> request headers: {'X-user-key': '1122610847', 'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02S2Q82jHN0RiLA99F1fBBBB_1xmMw00ad1757d0042e9ae9f;'}
+[INFO]14:00:07:864-buRequests.py:15 >> request body: {'noteId': 'ac83a4dff2594c7aa4591aea903102df', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:08:040-buRequests.py:21 >> response code: 401
+[INFO]14:00:08:041-buRequests.py:22 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]14:00:08:042-caseLog.py:75 >> Case run time: 0.33s
+[CASE]14:00:08:354-caseLog.py:71 >> Method Name:testCase14_end_sid, Class Name:CreateNoteContentCaseInput
+[CASE]14:00:08:355-caseLog.py:72 >> Test Description:测试请求上传便签内容接口的请求头wps_sid的字段值为过期的sid
+[INFO]14:00:08:356-test_input.py:398 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:08:356-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:08:506-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642410111}
+[INFO]14:00:08:507-test_input.py:401 >> 前置构建的便签主体数据返回的便签id:3ea737e2b19a4df7b728d09fdd734f95
+[CASE]14:00:08:508-test_input.py:403 >> Case014:wps_sid的字段值为过期的sid
+[INFO]14:00:08:508-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:08:509-buRequests.py:14 >> request headers: {'X-user-key': '1122610847', 'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02S2Q82jHN0RiLA99F1fdMWV_1xmMw00ad1757d0042e9ae9f;'}
+[INFO]14:00:08:510-buRequests.py:15 >> request body: {'noteId': '3ea737e2b19a4df7b728d09fdd734f95', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:08:678-buRequests.py:21 >> response code: 401
+[INFO]14:00:08:680-buRequests.py:22 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]14:00:08:680-caseLog.py:75 >> Case run time: 0.33s
+[CASE]14:00:08:994-caseLog.py:71 >> Method Name:testCase_major, Class Name:CreateNoteContent
+[CASE]14:00:08:995-caseLog.py:72 >> Test Description:测试请求上传便签内容接口主流程
+[INFO]14:00:08:996-test_major.py:24 >> 【前置条件】新增一条便签主体数据
+[INFO]14:00:08:997-dataCreate.py:60 >> 【前置】构建便签主体
+[INFO]14:00:09:155-dataCreate.py:78 >> 便签主体响应response body:{"responseTime":31,"infoVersion":1,"infoUpdateTime":1766642410761}
+[INFO]14:00:09:156-test_major.py:27 >> 前置构建的便签主体数据返回的便签id:415d1c4495ea48578764328f1c46b83a
+[CASE]14:00:09:157-test_major.py:30 >> 【请求上传便签内容接口步骤】
+[INFO]14:00:09:157-buRequests.py:13 >> request url: http://note-api.wps.cn/v3/notesvr/set/notecontent
+[INFO]14:00:09:158-buRequests.py:14 >> request headers: {'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;', 'X-user-key': '1122610847', 'Content-Type': 'application/json'}
+[INFO]14:00:09:159-buRequests.py:15 >> request body: {'noteId': '415d1c4495ea48578764328f1c46b83a', 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:09:328-buRequests.py:21 >> response code: 200
+[INFO]14:00:09:329-buRequests.py:22 >> response body: {"responseTime":32,"contentVersion":1,"contentUpdateTime":1766642410938}
+[CASE]14:00:09:330-caseLog.py:75 >> Case run time: 0.34s
+[CASE]14:00:09:795-caseLog.py:71 >> Method Name:testCase01_getZeroData, Class Name:GetNotesHandle
+[CASE]14:00:09:796-caseLog.py:72 >> Test Description:请求获取首页便签接口，测试获取0条数据
+[INFO]14:00:09:797-test_handle.py:23 >> 【前置条件】新增一条便签数据
+[INFO]14:00:09:798-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:10:097-test_handle.py:26 >> 前置构建的一条便签数据:{'noteId': '217b56d592614e1ebff86005fb743a3e', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:10:098-test_handle.py:28 >> 【请求首页便签接口】
+[INFO]14:00:10:099-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/0/notes
+[INFO]14:00:10:100-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:10:101-buRequests.py:34 >> request body: None
+[INFO]14:00:10:261-buRequests.py:43 >> response code: 200
+[INFO]14:00:10:262-buRequests.py:44 >> response body: {"responseTime":0,"webNotes":[{"noteId":"217b56d592614e1ebff86005fb743a3e","createTime":1766642411555,"star":0,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642411555,"groupId":null,"title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642411707}]}
+[CASE]14:00:10:709-caseLog.py:71 >> Method Name:testCase02_getThreeData, Class Name:GetNotesHandle
+[CASE]14:00:10:710-caseLog.py:72 >> Test Description:请求获取首页便签接口，测试获取3条数据
+[INFO]14:00:10:711-test_handle.py:46 >> 【前置条件】新增3条便签数据
+[INFO]14:00:10:712-dataCreate.py:10 >> 【前置】构建3条便签数据
+[INFO]14:00:11:625-test_handle.py:50 >> 前置构建的3条便签数据:{'noteId': '638801932b4e4ba8b1b4640a4889fbca', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:11:626-test_handle.py:50 >> 前置构建的3条便签数据:{'noteId': 'dc42a95b0b1e490fb90a8f3ec210b7a0', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:11:627-test_handle.py:50 >> 前置构建的3条便签数据:{'noteId': '04cbdebb6f3c42529b693c1e689fb46e', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:11:628-test_handle.py:52 >> 【请求首页便签接口】
+[INFO]14:00:11:629-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/3/notes
+[INFO]14:00:11:629-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:11:630-buRequests.py:34 >> request body: None
+[INFO]14:00:11:887-buRequests.py:43 >> response code: 200
+[INFO]14:00:11:888-buRequests.py:44 >> response body: {"responseTime":0,"webNotes":[{"noteId":"04cbdebb6f3c42529b693c1e689fb46e","createTime":1766642413086,"star":0,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642413086,"groupId":null,"title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642413234},{"noteId":"dc42a95b0b1e490fb90a8f3ec210b7a0","createTime":1766642412772,"star":0,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642412772,"groupId":null,"title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642412935},{"noteId":"638801932b4e4ba8b1b4640a4889fbca","createTime":1766642412478,"star":0,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642412478,"groupId":null,"title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642412631}]}
+[CASE]14:00:11:889-caseLog.py:75 >> Case run time: 1.18s
+[CASE]14:00:12:637-caseLog.py:71 >> Method Name:testCase03_permissionRestrictions, Class Name:GetNotesHandle
+[CASE]14:00:12:638-caseLog.py:72 >> Test Description:请求获取首页便签接口，用其他用户获取当前用户所创建的便签内容(接口越权)
+[INFO]14:00:12:639-test_handle.py:116 >> 【前置条件】当前用户新增一条便签数据
+[INFO]14:00:12:640-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:12:956-test_handle.py:119 >> 前置构建的一条便签数据:{'noteId': 'c30873ec79c94a7c958c4e979c4fbe46', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[INFO]14:00:12:957-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1123710849/home/startindex/0/rows/1/notes
+[INFO]14:00:12:958-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:12:959-buRequests.py:34 >> request body: None
+[INFO]14:00:13:122-buRequests.py:43 >> response code: 412
+[INFO]14:00:13:123-buRequests.py:44 >> response body: {"errorCode":-1011,"errorMsg":"user change!"}
+[CASE]14:00:13:124-caseLog.py:75 >> Case run time: 0.49s
+[CASE]14:00:13:584-caseLog.py:71 >> Method Name:testCase01_null_userId, Class Name:GetNotesCaseInput
+[CASE]14:00:13:585-caseLog.py:72 >> Test Description:测试请求首页便签接口,必填项userId为null
+[INFO]14:00:13:585-test_input.py:25 >> 【前置条件】新增一条便签数据
+[INFO]14:00:13:586-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:13:992-test_input.py:28 >> 前置构建的一条便签数据:{'noteId': '73e66fb61633409ab3f04e59be2331a7', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:13:993-test_input.py:30 >> 【请求获取首页便签接口】
+[INFO]14:00:13:994-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/null/home/startindex/0/rows/10/notes
+[INFO]14:00:13:995-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:13:996-buRequests.py:34 >> request body: None
+[INFO]14:00:14:130-buRequests.py:43 >> response code: 500
+[INFO]14:00:14:131-buRequests.py:44 >> response body: {"errorCode":-7,"errorMsg":"参数类型错误！"}
+[CASE]14:00:14:132-caseLog.py:75 >> Case run time: 0.55s
+[CASE]14:00:14:575-caseLog.py:71 >> Method Name:testCase02_null_startindex, Class Name:GetNotesCaseInput
+[CASE]14:00:14:576-caseLog.py:72 >> Test Description:测试请求首页便签接口,必填项startindex为null
+[INFO]14:00:14:577-test_input.py:47 >> 【前置条件】新增一条便签数据
+[INFO]14:00:14:578-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:14:882-test_input.py:50 >> 前置构建的一条便签数据:{'noteId': '5e0f581ddb4c44c892f8538cd3bc8860', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:14:883-test_input.py:52 >> 【请求获取首页便签接口】
+[INFO]14:00:14:884-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/null/rows/1/notes
+[INFO]14:00:14:885-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:14:886-buRequests.py:34 >> request body: None
+[INFO]14:00:15:022-buRequests.py:43 >> response code: 500
+[INFO]14:00:15:023-buRequests.py:44 >> response body: {"errorCode":-7,"errorMsg":"参数类型错误！"}
+[CASE]14:00:15:024-caseLog.py:75 >> Case run time: 0.45s
+[CASE]14:00:15:476-caseLog.py:71 >> Method Name:testCase03_null_rows, Class Name:GetNotesCaseInput
+[CASE]14:00:15:477-caseLog.py:72 >> Test Description:测试请求首页便签接口,必填项rows为null
+[INFO]14:00:15:478-test_input.py:69 >> 【前置条件】新增一条便签数据
+[INFO]14:00:15:478-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:15:775-test_input.py:72 >> 前置构建的一条便签数据:{'noteId': 'ffdffebf1e0f49728c099b04a222f699', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:15:777-test_input.py:74 >> 【请求获取首页便签接口】
+[INFO]14:00:15:777-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/null/notes
+[INFO]14:00:15:778-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:15:779-buRequests.py:34 >> request body: None
+[INFO]14:00:16:030-buRequests.py:43 >> response code: 500
+[INFO]14:00:16:031-buRequests.py:44 >> response body: {"errorCode":-7,"errorMsg":"参数类型错误！"}
+[CASE]14:00:16:032-caseLog.py:75 >> Case run time: 0.56s
+[CASE]14:00:16:493-caseLog.py:71 >> Method Name:testCase04_boundary_startindex, Class Name:GetNotesCaseInput
+[CASE]14:00:16:494-caseLog.py:72 >> Test Description:测试请求首页便签接口,必填项startindex为-1
+[INFO]14:00:16:495-test_input.py:91 >> 【前置条件】新增一条便签数据
+[INFO]14:00:16:496-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:16:806-test_input.py:94 >> 前置构建的一条便签数据:{'noteId': 'ce62d516c3274e55b99feb948ef8d47b', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:16:807-test_input.py:96 >> 【请求获取首页便签接口】
+[INFO]14:00:16:808-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/-1/rows/1/notes
+[INFO]14:00:16:809-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:16:810-buRequests.py:34 >> request body: None
+[INFO]14:00:16:957-buRequests.py:43 >> response code: 200
+[INFO]14:00:16:958-buRequests.py:44 >> response body: {"responseTime":0,"webNotes":[{"noteId":"ce62d516c3274e55b99feb948ef8d47b","createTime":1766642418255,"star":0,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642418255,"groupId":null,"title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642418413}]}
+[CASE]14:00:17:419-caseLog.py:71 >> Method Name:testCase05_keyRemove_sid, Class Name:GetNotesCaseInput
+[CASE]14:00:17:420-caseLog.py:72 >> Test Description:测试请求首页便签接口,请求头必填项sid缺失
+[INFO]14:00:17:420-test_input.py:113 >> 【前置条件】新增一条便签数据
+[INFO]14:00:17:421-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:17:761-test_input.py:116 >> 前置构建的一条便签数据:{'noteId': 'cc51bffb202745fe86e70438458ee92d', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:17:762-test_input.py:118 >> 【请求获取首页便签接口】
+[INFO]14:00:17:763-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]14:00:17:764-buRequests.py:33 >> request headers: {'Content-Type': 'application/json'}
+[INFO]14:00:17:764-buRequests.py:34 >> request body: None
+[INFO]14:00:17:888-buRequests.py:43 >> response code: 401
+[INFO]14:00:17:889-buRequests.py:44 >> response body: {"errorCode":-2009,"errorMsg":""}
+[CASE]14:00:17:890-caseLog.py:75 >> Case run time: 0.47s
+[CASE]14:00:18:465-caseLog.py:71 >> Method Name:testCase06_valueKeyEmptyString_sid, Class Name:GetNotesCaseInput
+[CASE]14:00:18:466-caseLog.py:72 >> Test Description:测试请求首页便签接口,请求头必填项sid的值为空字符串
+[INFO]14:00:18:467-test_input.py:134 >> 【前置条件】新增一条便签数据
+[INFO]14:00:18:467-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:18:774-test_input.py:137 >> 前置构建的一条便签数据:{'noteId': '6ba5399e911b476d94c9eded4449ab05', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:18:775-test_input.py:139 >> 【请求获取首页便签接口】
+[INFO]14:00:18:776-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]14:00:18:777-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid='}
+[INFO]14:00:18:778-buRequests.py:34 >> request body: None
+[INFO]14:00:18:920-buRequests.py:43 >> response code: 401
+[INFO]14:00:18:921-buRequests.py:44 >> response body: {"errorCode":-2009,"errorMsg":""}
+[CASE]14:00:18:922-caseLog.py:75 >> Case run time: 0.46s
+[CASE]14:00:19:366-caseLog.py:71 >> Method Name:testCase07_valueNull_sid, Class Name:GetNotesCaseInput
+[CASE]14:00:19:367-caseLog.py:72 >> Test Description:测试请求首页便签接口,请求头必填项sid的值为null
+[INFO]14:00:19:367-test_input.py:156 >> 【前置条件】新增一条便签数据
+[INFO]14:00:19:368-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:19:673-test_input.py:159 >> 前置构建的一条便签数据:{'noteId': 'ff2dce1a2e444423a60d47feb2c7b852', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:19:674-test_input.py:161 >> 【请求获取首页便签接口】
+[INFO]14:00:19:675-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]14:00:19:676-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=null'}
+[INFO]14:00:19:677-buRequests.py:34 >> request body: None
+[INFO]14:00:19:823-buRequests.py:43 >> response code: 401
+[INFO]14:00:19:824-buRequests.py:44 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]14:00:19:825-caseLog.py:75 >> Case run time: 0.46s
+[CASE]14:00:20:408-caseLog.py:71 >> Method Name:testCase08_error_sid, Class Name:GetNotesCaseInput
+[CASE]14:00:20:409-caseLog.py:72 >> Test Description:测试请求首页便签接口,请求头必填项sid的值为错误的身份信息
+[INFO]14:00:20:410-test_input.py:178 >> 【前置条件】新增一条便签数据
+[INFO]14:00:20:410-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:20:749-test_input.py:181 >> 前置构建的一条便签数据:{'noteId': 'a772fb5b64a1438ebffb518c08a8bbcf', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:20:750-test_input.py:183 >> 【请求获取首页便签接口】
+[INFO]14:00:20:751-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]14:00:20:752-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02S2Q82jHN0RiLA99F1fBBBB_1xmMw00ad1757d0042e9ae9f;'}
+[INFO]14:00:20:753-buRequests.py:34 >> request body: None
+[INFO]14:00:20:901-buRequests.py:43 >> response code: 401
+[INFO]14:00:20:903-buRequests.py:44 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]14:00:20:904-caseLog.py:75 >> Case run time: 0.50s
+[CASE]14:00:21:392-caseLog.py:71 >> Method Name:testCase09_end_sid, Class Name:GetNotesCaseInput
+[CASE]14:00:21:393-caseLog.py:72 >> Test Description:测试请求首页便签接口,请求头必填项sid的值为过期的身份信息
+[INFO]14:00:21:394-test_input.py:200 >> 【前置条件】新增一条便签数据
+[INFO]14:00:21:395-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:21:790-test_input.py:203 >> 前置构建的一条便签数据:{'noteId': '7bd2ce9c04fe421ebb7518106b4bba9f', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:21:791-test_input.py:205 >> 【请求获取首页便签接口】
+[INFO]14:00:21:792-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]14:00:21:793-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02S2Q82jHN0RiLA99F1fdMWV_1xmMw00ad1757d0042e9ae9f;'}
+[INFO]14:00:21:793-buRequests.py:34 >> request body: None
+[INFO]14:00:21:977-buRequests.py:43 >> response code: 401
+[INFO]14:00:21:978-buRequests.py:44 >> response body: {"errorCode":-2010,"errorMsg":""}
+[CASE]14:00:21:979-caseLog.py:75 >> Case run time: 0.59s
+[CASE]14:00:22:539-caseLog.py:71 >> Method Name:testCase_major, Class Name:GetNotes
+[CASE]14:00:22:540-caseLog.py:72 >> Test Description:测试请求首页便签列表接口主流程
+[INFO]14:00:22:540-dataCreate.py:10 >> 【前置】构建1条便签数据
+[INFO]14:00:22:855-test_major.py:29 >> 前置构建的一条便签数据:{'noteId': 'c17b25d34fe546278636c4119952bb02', 'star': 0, 'title': 'test', 'summary': 'test', 'body': 'test', 'localContentVersion': 1, 'BodyType': 0}
+[CASE]14:00:22:856-test_major.py:30 >> 【请求首页便签接口】
+[INFO]14:00:22:857-buRequests.py:32 >> request url: http://note-api.wps.cn/v3/notesvr/user/1122610847/home/startindex/0/rows/1/notes
+[INFO]14:00:22:858-buRequests.py:33 >> request headers: {'Content-Type': 'application/json', 'Cookie': 'wps_sid=V02SH23fI8M5bC4ctXMykm6gne53xYo00a7332920042e9ae9f;'}
+[INFO]14:00:22:858-buRequests.py:34 >> request body: None
+[INFO]14:00:23:039-buRequests.py:43 >> response code: 200
+[INFO]14:00:23:040-buRequests.py:44 >> response body: {"responseTime":0,"webNotes":[{"noteId":"c17b25d34fe546278636c4119952bb02","createTime":1766642424288,"star":0,"remindTime":0,"remindType":0,"infoVersion":1,"infoUpdateTime":1766642424288,"groupId":null,"title":"test","summary":"test","thumbnail":null,"contentVersion":1,"contentUpdateTime":1766642424456}]}
+[CASE]14:00:23:041-caseLog.py:75 >> Case run time: 0.50s
