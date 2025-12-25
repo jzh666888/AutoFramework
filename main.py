@@ -7,6 +7,7 @@ from reportTool.BeautifulReport import BeautifulReport
 DIR = os.path.dirname(os.path.abspath(__file__))
 
 if __name__ == '__main__':
+    print('@@@')
     case_dir = './testCase'
     if len(sys.argv) == 2:  # python3 main.py test_create_group
         if str(sys.argv[1]).startswith('test_'):
